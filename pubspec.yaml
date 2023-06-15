@@ -40,6 +40,8 @@ dependencies:
 
   # Bottom Bar
   animated_notch_bottom_bar: ^1.0.0
+  iconly: ^1.0.1
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +75,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/images/home_page_bg.png
+    - assets/images/slider_graphic_1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

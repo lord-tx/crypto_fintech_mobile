@@ -14,12 +14,12 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
+            Text(
               'STACKED',
               style: TextStyle(
                 fontSize: 40,
@@ -28,7 +28,7 @@ class StartupView extends StackedView<StartupViewModel> {
             ),
             Row(
               mainAxisSize: MainAxisSize.min,
-              children: const [
+              children: [
                 Text(
                   'Loading ...',
                   style: TextStyle(
