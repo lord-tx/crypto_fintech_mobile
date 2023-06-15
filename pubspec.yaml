@@ -4,18 +4,14 @@ description: An app build with the stacked framework
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
+
+# This project was last built using:
+# flutter --version
+# Flutter 3.11.0-6.0.pre.134 • channel master • https://github.com/flutter/flutter.git
+# Framework • revision f31dae2a80 (4 weeks ago) • 2023-05-17 17:18:51 -0700
+# Engine • revision d970370779
+# Tools • Dart 3.1.0 (build 3.1.0-118.0.dev) • DevTools 2.23.1
 
 environment:
   sdk: ">=2.17.0 <4.0.0"

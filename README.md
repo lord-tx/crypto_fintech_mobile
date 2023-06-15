@@ -1,15 +1,16 @@
 # stacked_app
 
-A new Flutter project.
+Flutter app for Opticash Test
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project was last build using:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+flutter --version
+Flutter 3.11.0-6.0.pre.134 • channel master • https://github.com/flutter/flutter.git
+Framework • revision f31dae2a80 (4 weeks ago) • 2023-05-17 17:18:51 -0700
+Engine • revision d970370779
+Tools • Dart 3.1.0 (build 3.1.0-118.0.dev) • DevTools 2.23.1
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
