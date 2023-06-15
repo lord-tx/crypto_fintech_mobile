@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:opticash_mobile/ui/common/app_assets.dart';
 import 'package:opticash_mobile/ui/common/app_strings.dart';
 import 'package:opticash_mobile/ui/common/ui_theming.dart';
+import 'package:opticash_mobile/ui/components/opti_button.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
@@ -17,46 +18,42 @@ class OnBoardingView extends StackedView<OnBoardingViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Color(0xFF0B0B0B),
+      backgroundColor: const Color(0xFF0B0B0B),
       persistentFooterButtons: [
         Column(
           children: [
             Align(
               alignment: Alignment.center,
-              child: InkWell(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 52,
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  // padding: const EdgeInsets.all(),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            Color(0xFFA3CB00),
-                            Color(0xFFDDDA4C),
-                          ]
-                      ),
-                      borderRadius: BorderRadius.circular(5)
-                  ),
-                  child: Text(ksCreateNewAccount, style: ktButtonTextStyle,),
-                ),
-              ),
+              child: OptiButton(
+                isLoading: false,
+                label: ksCreateNewAccount,
+                submit: () { viewModel.navigateToCreateAccount(); },
+                color: kcPrimaryColor,
+                gradientColors: const [
+                  Color(0xFFA3CB00),
+                  Color(0xFFDDDA4C),
+                ],
+              )
             ),
+            viewModel.isBusy ? Container(
+              padding: const EdgeInsets.all(10),
+                child: const CircularProgressIndicator(color: Colors.white,)
+            ) :
             TextButton(
-              onPressed: (){},
+              onPressed: (){
+                viewModel.navigateToHomeView();
+              },
               child: Text("Sign In", style: ktButtonTextStyleInv.copyWith(decoration: TextDecoration.underline),),
             )
           ],
         )
       ],
       persistentFooterAlignment: AlignmentDirectional.center,
-      body: Container(
-        child: ListView(
-          children: [
-            ImageSection(),
-            TextSection(),
-          ],
-        ),
+      body: ListView(
+        children: const [
+          ImageSection(),
+          TextSection(),
+        ],
       ),
     );
   }
@@ -101,7 +98,7 @@ class _ImageSectionState extends State<ImageSection> {
           Align(
             alignment: Alignment.center,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(kaOnboardingPattern),
                   fit: BoxFit.cover

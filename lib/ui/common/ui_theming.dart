@@ -7,6 +7,21 @@ TextStyle ktHomeHeaderTitleTextStyle = const TextStyle(
     fontFamily: "Rogerex"
 );
 
+TextStyle ktSignUpTitleTextStyle = const TextStyle(
+    color: Color(0xFF46531F),
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Rogerex"
+);
+
+TextStyle ktSignUpSubtitleTextStyle = const TextStyle(
+    color: Color(0xFF9E9E9E),
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Rogerex",
+    height: 1.5,
+);
+
 TextStyle ktHomeHeaderSubtitleTextStyle = const TextStyle(
     color: Color(0xFF9E9E9E),
     fontSize: 15,
