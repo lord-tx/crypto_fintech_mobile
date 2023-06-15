@@ -14,6 +14,36 @@ TextStyle ktHomeHeaderSubtitleTextStyle = const TextStyle(
     fontFamily: "Rogerex"
 );
 
+TextStyle ktButtonTextStyle = const TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Rogerex"
+);
+
+TextStyle ktButtonTextStyleInv = const TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Rogerex"
+);
+
+TextStyle ktOnboardingTitleTextStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 40,
+    fontWeight: FontWeight.w600,
+    fontFamily: "Rogerex",
+    height: 1.2,
+);
+
+TextStyle ktOnboardingSubtitleTextStyle = const TextStyle(
+    color: Color(0xFFCFCFCF),
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Rogerex",
+    height: 1.5,
+);
+
 TextStyle ktHomeCardTitleStyle = const TextStyle(
   color: Colors.white,
   fontSize: 16,

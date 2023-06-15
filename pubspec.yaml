@@ -75,6 +75,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/images/onboarding/
     - assets/images/home_page_bg.png
     - assets/images/slider_graphic_1.png
 
