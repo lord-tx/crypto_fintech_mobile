@@ -1,0 +1,1 @@
+const String kaHomeCardBackground = "assets/images/home_card_background.png";
