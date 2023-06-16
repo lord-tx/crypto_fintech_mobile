@@ -6,7 +6,7 @@ import 'package:stacked_services/stacked_services.dart';
 class OnBoardingViewModel extends BaseViewModel {
   final nav = locator<NavigationService>();
 
-  void navigateToCreateAccount(){
+  void navigateToCreateAccount() {
     nav.navigateToSignUpView();
   }
 

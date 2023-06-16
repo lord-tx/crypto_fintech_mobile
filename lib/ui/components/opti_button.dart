@@ -48,32 +48,33 @@ class OptiButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           gradient: gradientColors != null && disabled == false
               ? LinearGradient(
-            colors: gradientColors!,
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-          )
+                  colors: gradientColors!,
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                )
               : null,
         ),
         child: Center(
           child: isLoading
               ? const SizedBox(
-            height: 20,
-            width: 20,
-            child: Center(
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                strokeWidth: 2,
-              ),
-            ),
-          )
+                  height: 20,
+                  width: 20,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      strokeWidth: 2,
+                    ),
+                  ),
+                )
               : Text(
-            label,
-            style: ktButtonTextStyle.copyWith(color: labelColor),),
-            // style: TextStyle(
-            //     color: labelColor ?? Colors.white,
-            //     fontWeight: FontWeight.bold),
-          ),
+                  label,
+                  style: ktButtonTextStyle.copyWith(color: labelColor),
+                ),
+          // style: TextStyle(
+          //     color: labelColor ?? Colors.white,
+          //     fontWeight: FontWeight.bold),
         ),
+      ),
     );
   }
 }

@@ -10,44 +10,53 @@ class HomePageMainCard extends StatelessWidget {
   final String? amount;
   final String? walletAddress;
 
-  const HomePageMainCard({
-    super.key, this.cardTitle, this.amount, this.walletAddress
-  });
+  const HomePageMainCard(
+      {super.key, this.cardTitle, this.amount, this.walletAddress});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.28,
-      decoration: const BoxDecoration(
-        color: kcHomeTileBaseColor
-      ),
+      decoration: const BoxDecoration(color: kcHomeTileBaseColor),
       child: Column(
         children: [
           Expanded(
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                image: const DecorationImage(
-                  image: AssetImage(kaHomeCardBackground),
-                  fit: BoxFit.cover
-                ),
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.black
-              ),
+                  image: const DecorationImage(
+                      image: AssetImage(kaHomeCardBackground),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.black),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(cardTitle ?? "OPCH Balance", style: ktHomeCardTitleStyle,),
-                      const SizedBox(width: 5,),
-                      const Icon(Icons.arrow_drop_down_circle_rounded, color: Colors.white,)
-                    ]
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Text(
+                      cardTitle ?? "OPCH Balance",
+                      style: ktHomeCardTitleStyle,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    const Icon(
+                      Icons.arrow_drop_down_circle_rounded,
+                      color: Colors.white,
+                    )
+                  ]),
+                  Text(
+                    NumberFormat.currency(symbol: "\$", decimalDigits: 0)
+                        .format(int.tryParse(amount ?? "243998")),
+                    style: ktHomeCardAmountStyle,
                   ),
-                  Text(NumberFormat.currency(symbol: "\$", decimalDigits: 0).format(int.tryParse(amount ?? "243998")), style: ktHomeCardAmountStyle,),
-                  const SizedBox(height: 5,),
-                  Text(walletAddress ?? "123848492920304.234", style: ktHomeCardWalletStyle,),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    walletAddress ?? "123848492920304.234",
+                    style: ktHomeCardWalletStyle,
+                  ),
                 ],
               ),
             ),
@@ -60,14 +69,16 @@ class HomePageMainCard extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: const BoxDecoration(
-                        color: kcPrimaryColorMid,
-                        shape: BoxShape.circle
-                      ),
-                      child: const Icon(IconlyBold.send, color: Colors.white,)
+                        padding: const EdgeInsets.all(10),
+                        decoration: const BoxDecoration(
+                            color: kcPrimaryColorMid, shape: BoxShape.circle),
+                        child: const Icon(
+                          IconlyBold.send,
+                          color: Colors.white,
+                        )),
+                    const SizedBox(
+                      height: 5,
                     ),
-                    const SizedBox(height: 5,),
                     const Text("Send Money")
                   ],
                 ),
@@ -76,12 +87,14 @@ class HomePageMainCard extends StatelessWidget {
                     Container(
                         padding: const EdgeInsets.all(10),
                         decoration: const BoxDecoration(
-                            color: kcPrimaryColorMid,
-                            shape: BoxShape.circle
-                        ),
-                        child: const Icon(IconlyBold.wallet, color: Colors.white,)
+                            color: kcPrimaryColorMid, shape: BoxShape.circle),
+                        child: const Icon(
+                          IconlyBold.wallet,
+                          color: Colors.white,
+                        )),
+                    const SizedBox(
+                      height: 5,
                     ),
-                    const SizedBox(height: 5,),
                     const Text("Top-Up")
                   ],
                 ),
@@ -90,12 +103,14 @@ class HomePageMainCard extends StatelessWidget {
                     Container(
                         padding: const EdgeInsets.all(10),
                         decoration: const BoxDecoration(
-                            color: kcPrimaryColorMid,
-                            shape: BoxShape.circle
-                        ),
-                        child: const Icon(IconlyBold.editSquare, color: Colors.white,)
+                            color: kcPrimaryColorMid, shape: BoxShape.circle),
+                        child: const Icon(
+                          IconlyBold.editSquare,
+                          color: Colors.white,
+                        )),
+                    const SizedBox(
+                      height: 5,
                     ),
-                    const SizedBox(height: 5,),
                     const Text("Withdraw")
                   ],
                 ),

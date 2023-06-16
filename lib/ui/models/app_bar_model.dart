@@ -1,9 +1,6 @@
-class AppBarModel{
+class AppBarModel {
   String? title;
   String? assetImage;
 
-  AppBarModel({
-    this.title,
-    this.assetImage
-  });
+  AppBarModel({this.title, this.assetImage});
 }

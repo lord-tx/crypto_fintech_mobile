@@ -11,14 +11,21 @@ class HomePageTransactionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 20),
+
       /// Probably a ListTile shrink-wrapped
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Today, 26 june 2021", style: ktHomeTransactionTitleStyle,),
-              Text("See All", style: ktHomeTransactionButtonStyle, ),
+              Text(
+                "Today, 26 june 2021",
+                style: ktHomeTransactionTitleStyle,
+              ),
+              Text(
+                "See All",
+                style: ktHomeTransactionButtonStyle,
+              ),
             ],
           ),
           TransactionTile(
@@ -33,23 +40,21 @@ class HomePageTransactionSection extends StatelessWidget {
           ),
           TransactionTile(
             tileModel: HomeTransactionTileModel(
-              transactionTitle: "Payment Netflix",
-              category: "Food Delivery",
-              time: "10:12 AM",
-              amount: "1890",
-              credit: true,
-              assetLink: kaLinkedInLogo
-            ),
+                transactionTitle: "Payment Netflix",
+                category: "Food Delivery",
+                time: "10:12 AM",
+                amount: "1890",
+                credit: true,
+                assetLink: kaLinkedInLogo),
           ),
           TransactionTile(
             tileModel: HomeTransactionTileModel(
-              transactionTitle: "Payment Netflix",
-              category: "Entertainment",
-              time: "08:45 AM",
-              amount: "500",
-              credit: false,
-              assetLink: kaAppleLogo
-            ),
+                transactionTitle: "Payment Netflix",
+                category: "Entertainment",
+                time: "08:45 AM",
+                amount: "500",
+                credit: false,
+                assetLink: kaAppleLogo),
           ),
         ],
       ),
@@ -66,19 +71,26 @@ class TransactionTile extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFEDEDED)),
-        borderRadius: BorderRadius.circular(10)
-      ),
+          border: Border.all(color: const Color(0xFFEDEDED)),
+          borderRadius: BorderRadius.circular(10)),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundImage: AssetImage(tileModel.assetLink ?? kaDefaultAssetLink),
+          backgroundImage:
+              AssetImage(tileModel.assetLink ?? kaDefaultAssetLink),
         ),
-        title: Text(tileModel.transactionTitle ?? "Transaction Title", style: ktHomeTransactionListTitleStyle,),
+        title: Text(
+          tileModel.transactionTitle ?? "Transaction Title",
+          style: ktHomeTransactionListTitleStyle,
+        ),
         subtitle: Text(
           "${tileModel.category}   •   ${tileModel.time}",
           style: ktHomeTransactionListSubtitleStyle,
         ),
-        trailing: Text(NumberFormat.currency(symbol: "\$").format(int.tryParse(tileModel.amount ?? "500")), style: ktHomeTransactionListAmountStyle(tileModel.credit ?? false),),
+        trailing: Text(
+          NumberFormat.currency(symbol: "\$")
+              .format(int.tryParse(tileModel.amount ?? "500")),
+          style: ktHomeTransactionListAmountStyle(tileModel.credit ?? false),
+        ),
       ),
     );
   }

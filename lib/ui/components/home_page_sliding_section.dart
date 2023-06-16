@@ -11,10 +11,7 @@ class HomePageSlidingSection extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.17,
       decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(kaHomeSliderGraphicMask)
-        )
-      ),
+          image: DecorationImage(image: AssetImage(kaHomeSliderGraphicMask))),
       child: ListView(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
@@ -36,10 +33,14 @@ class HomePageSlidingSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Align(
-                  alignment: Alignment.centerLeft,
-                  child: Image.asset(kaHomeSliderGraphic_2, fit: BoxFit.fitWidth,)
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset(
+                      kaHomeSliderGraphic_2,
+                      fit: BoxFit.fitWidth,
+                    )),
+                const SizedBox(
+                  width: 25,
                 ),
-                const SizedBox(width: 25,),
                 Text(
                   "Refer a friend\nand earn \$5 per \nreferral",
                   style: ktHomeSlideTextStyle,
@@ -65,10 +66,14 @@ class HomePageSlidingSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Align(
-                  alignment: Alignment.centerLeft,
-                  child: Image.asset(kaHomeSliderGraphic_1, fit: BoxFit.fitWidth,)
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset(
+                      kaHomeSliderGraphic_1,
+                      fit: BoxFit.fitWidth,
+                    )),
+                const SizedBox(
+                  width: 25,
                 ),
-                const SizedBox(width: 25,),
                 Text(
                   "Refer a friend\nand earn \$5 per \nreferral",
                   style: ktHomeSlideTextStyle,

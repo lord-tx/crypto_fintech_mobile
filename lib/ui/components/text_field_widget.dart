@@ -68,9 +68,9 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 5),
         decoration: const BoxDecoration(
-          // borderRadius: BorderRadius.circular(12),
-          // boxShadow: [boxShadow],
-        ),
+            // borderRadius: BorderRadius.circular(12),
+            // boxShadow: [boxShadow],
+            ),
         child: TextFormField(
           focusNode: widget.focusNode,
           onTap: widget.onTap as void Function()?,
@@ -112,19 +112,18 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                 borderRadius: BorderRadius.all(
                     Radius.circular(widget.borderRadius ?? 30.0)),
                 borderSide: BorderSide(
-                    width: 1.5,
-                    color: widget.borderSideColor ?? Colors.black),
+                    width: 1.5, color: widget.borderSideColor ?? Colors.black),
               ),
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(
                     Radius.circular(widget.borderRadius ?? 30.0)),
-                borderSide:
-                    const BorderSide(width: 1.5, color: Colors.black),
+                borderSide: const BorderSide(width: 1.5, color: Colors.black),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(
                     Radius.circular(widget.borderRadius ?? 30.0)),
-                borderSide: const BorderSide(width: 1.5, color: Color(0xFFE0E0E0)),
+                borderSide:
+                    const BorderSide(width: 1.5, color: Color(0xFFE0E0E0)),
               ),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(

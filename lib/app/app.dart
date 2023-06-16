@@ -9,6 +9,7 @@ import 'package:opticash_mobile/ui/views/card_details/card_details_view.dart';
 import 'package:opticash_mobile/ui/views/send_money/send_money_view.dart';
 import 'package:opticash_mobile/ui/views/share_transaction/share_transaction_view.dart';
 import 'package:opticash_mobile/ui/views/sign_up/sign_up_view.dart';
+import 'package:opticash_mobile/ui/views/unimplemented/unimplemented_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -20,6 +21,7 @@ import 'package:opticash_mobile/ui/views/sign_up/sign_up_view.dart';
     MaterialRoute(page: SendMoneyView),
     MaterialRoute(page: ShareTransactionView),
     MaterialRoute(page: SignUpView),
+    MaterialRoute(page: UnimplementedView),
 // @stacked-route
   ],
   dependencies: [

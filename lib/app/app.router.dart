@@ -5,7 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 import 'package:flutter/material.dart';
 import 'package:opticash_mobile/ui/views/card_details/card_details_view.dart'
     as _i5;
@@ -18,8 +18,10 @@ import 'package:opticash_mobile/ui/views/share_transaction/share_transaction_vie
     as _i7;
 import 'package:opticash_mobile/ui/views/sign_up/sign_up_view.dart' as _i8;
 import 'package:opticash_mobile/ui/views/startup/startup_view.dart' as _i3;
+import 'package:opticash_mobile/ui/views/unimplemented/unimplemented_view.dart'
+    as _i9;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i10;
+import 'package:stacked_services/stacked_services.dart' as _i11;
 
 class Routes {
   static const homeView = '/home-view';
@@ -36,6 +38,8 @@ class Routes {
 
   static const signUpView = '/sign-up-view';
 
+  static const unimplementedView = '/unimplemented-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -44,6 +48,7 @@ class Routes {
     sendMoneyView,
     shareTransactionView,
     signUpView,
+    unimplementedView,
   };
 }
 
@@ -77,48 +82,58 @@ class StackedRouter extends _i1.RouterBase {
       Routes.signUpView,
       page: _i8.SignUpView,
     ),
+    _i1.RouteDef(
+      Routes.unimplementedView,
+      page: _i9.UnimplementedView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.OnBoardingView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnBoardingView(),
         settings: data,
       );
     },
     _i5.CardDetailsView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.CardDetailsView(),
         settings: data,
       );
     },
     _i6.SendMoneyView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.SendMoneyView(),
         settings: data,
       );
     },
     _i7.ShareTransactionView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ShareTransactionView(),
         settings: data,
       );
     },
     _i8.SignUpView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.SignUpView(),
+        settings: data,
+      );
+    },
+    _i9.UnimplementedView: (data) {
+      return _i10.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.UnimplementedView(),
         settings: data,
       );
     },
@@ -130,7 +145,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i10.NavigationService {
+extension NavigatorStateExtension on _i11.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -229,6 +244,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToUnimplementedView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.unimplementedView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -321,6 +350,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.signUpView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithUnimplementedView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.unimplementedView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

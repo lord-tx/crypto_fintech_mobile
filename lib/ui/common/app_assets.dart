@@ -20,4 +20,5 @@ const String kaOnboardingImage_5 = "assets/images/onboarding/Image-5.png";
 const String kaOnboardingImage_6 = "assets/images/onboarding/Image-6.png";
 const String kaOnboardingImage_7 = "assets/images/onboarding/Image-7.png";
 const String kaOnboardingImage_8 = "assets/images/onboarding/Image-8.png";
-const String kaOnboardingPattern = "assets/images/onboarding/onboarding_pattern.png";
+const String kaOnboardingPattern =
+    "assets/images/onboarding/onboarding_pattern.png";

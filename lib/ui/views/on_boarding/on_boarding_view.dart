@@ -23,28 +23,35 @@ class OnBoardingView extends StackedView<OnBoardingViewModel> {
         Column(
           children: [
             Align(
-              alignment: Alignment.center,
-              child: OptiButton(
-                isLoading: false,
-                label: ksCreateNewAccount,
-                submit: () { viewModel.navigateToCreateAccount(); },
-                color: kcPrimaryColor,
-                gradientColors: const [
-                  Color(0xFFA3CB00),
-                  Color(0xFFDDDA4C),
-                ],
-              )
-            ),
-            viewModel.isBusy ? Container(
-              padding: const EdgeInsets.all(10),
-                child: const CircularProgressIndicator(color: Colors.white,)
-            ) :
-            TextButton(
-              onPressed: (){
-                viewModel.navigateToHomeView();
-              },
-              child: Text("Sign In", style: ktButtonTextStyleInv.copyWith(decoration: TextDecoration.underline),),
-            )
+                alignment: Alignment.center,
+                child: OptiButton(
+                  isLoading: false,
+                  label: ksCreateNewAccount,
+                  submit: () {
+                    viewModel.navigateToCreateAccount();
+                  },
+                  color: kcPrimaryColor,
+                  gradientColors: const [
+                    Color(0xFFA3CB00),
+                    Color(0xFFDDDA4C),
+                  ],
+                )),
+            viewModel.isBusy
+                ? Container(
+                    padding: const EdgeInsets.all(10),
+                    child: const CircularProgressIndicator(
+                      color: Colors.white,
+                    ))
+                : TextButton(
+                    onPressed: () {
+                      viewModel.navigateToHomeView();
+                    },
+                    child: Text(
+                      "Sign In",
+                      style: ktButtonTextStyleInv.copyWith(
+                          decoration: TextDecoration.underline),
+                    ),
+                  )
           ],
         )
       ],
@@ -73,16 +80,16 @@ class ImageSection extends StatefulWidget {
 }
 
 class _ImageSectionState extends State<ImageSection> {
-
   bool pushed = false;
 
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 100)).then((value) => pushImages());
+    Future.delayed(const Duration(milliseconds: 100))
+        .then((value) => pushImages());
   }
 
-  void pushImages(){
+  void pushImages() {
     setState(() {
       pushed = true;
     });
@@ -100,9 +107,7 @@ class _ImageSectionState extends State<ImageSection> {
             child: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(kaOnboardingPattern),
-                  fit: BoxFit.cover
-                ),
+                    image: AssetImage(kaOnboardingPattern), fit: BoxFit.cover),
               ),
             ),
           ),
@@ -185,10 +190,20 @@ class TextSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(ksOnboardingTitle, style: ktOnboardingTitleTextStyle,),
-          const SizedBox(height: 5,),
-          Text(ksOnboardingSubtitle, style: ktOnboardingSubtitleTextStyle,),
-          const SizedBox(height: 25,),
+          Text(
+            ksOnboardingTitle,
+            style: ktOnboardingTitleTextStyle,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            ksOnboardingSubtitle,
+            style: ktOnboardingSubtitleTextStyle,
+          ),
+          const SizedBox(
+            height: 25,
+          ),
           Row(
             children: [
               Container(
@@ -196,13 +211,17 @@ class TextSection extends StatelessWidget {
                 width: 68,
                 color: kcPrimaryColor,
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(
+                width: 10,
+              ),
               Container(
                 height: 2,
                 width: 68,
                 color: const Color(0xFFA0A0A0),
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(
+                width: 10,
+              ),
               Container(
                 height: 2,
                 width: 68,
@@ -215,5 +234,3 @@ class TextSection extends StatelessWidget {
     );
   }
 }
-
-

@@ -25,11 +25,12 @@ class HomeView extends StackedView<HomeViewModel> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(kaHomePageBackground,),
-            fit: BoxFit.cover,
-          )
-        ),
+            image: DecorationImage(
+          image: AssetImage(
+            kaHomePageBackground,
+          ),
+          fit: BoxFit.cover,
+        )),
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           children: const [
@@ -48,6 +49,3 @@ class HomeView extends StackedView<HomeViewModel> {
   ) =>
       HomeViewModel();
 }
-
-
-

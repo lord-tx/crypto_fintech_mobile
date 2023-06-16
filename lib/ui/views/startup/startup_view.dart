@@ -16,14 +16,16 @@ class StartupView extends StackedView<StartupViewModel> {
   ) {
     return Container(
       decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(kaLoadingBackground),
-          alignment: Alignment.topCenter,
-          fit: BoxFit.contain,
-        ),
-        color: Colors.black
+          image: DecorationImage(
+            image: AssetImage(kaLoadingBackground),
+            alignment: Alignment.topCenter,
+            fit: BoxFit.contain,
+          ),
+          color: Colors.black),
+      child: Image.asset(
+        kaOptiLogo,
+        scale: 5,
       ),
-      child: Image.asset(kaOptiLogo, scale: 5,),
     );
   }
 

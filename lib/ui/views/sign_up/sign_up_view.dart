@@ -20,31 +20,43 @@ class SignUpView extends StackedView<SignUpViewModel> {
   ) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const OptiAppBar(type: OptiAppBarType.internal,),
+      appBar: const OptiAppBar(
+        type: OptiAppBarType.internal,
+      ),
       body: Container(
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(kaHomePageBackground)
-          )
-        ),
+            image: DecorationImage(image: AssetImage(kaHomePageBackground))),
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           children: [
-            const SizedBox(height: 40,),
+            const SizedBox(
+              height: 40,
+            ),
             const TextHeader(),
-            const SizedBox(height: 40,),
+            const SizedBox(
+              height: 40,
+            ),
             const SignUpFormBody(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(ksSignInClickableText, style: ktSignUpSubtitleTextStyle,),
+                Text(
+                  ksSignInClickableText,
+                  style: ktSignUpSubtitleTextStyle,
+                ),
                 TextButton(
-                  onPressed: (){},
-                  child: Text("Sign In", style: ktSignUpSubtitleTextStyle.copyWith(color: Colors.black, decoration: TextDecoration.underline),)
-                )
+                    onPressed: () {},
+                    child: Text(
+                      "Sign In",
+                      style: ktSignUpSubtitleTextStyle.copyWith(
+                          color: Colors.black,
+                          decoration: TextDecoration.underline),
+                    ))
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             OptiButton(
               isLoading: viewModel.isBusy,
               label: ksCreateNewAccount,
@@ -54,22 +66,44 @@ class SignUpView extends StackedView<SignUpViewModel> {
               color: const Color(0xFF0B0B0B),
               labelColor: Colors.white,
             ),
-            const SizedBox(height: 40,),
+            const SizedBox(
+              height: 40,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(ksPrivacyText, style: ktSignUpSubtitleTextStyle.copyWith(height: null),),
-                Text(" terms of use", style: ktSignUpSubtitleTextStyle.copyWith(color: Colors.black, decoration: TextDecoration.underline, height: null),)
+                Text(
+                  ksPrivacyText,
+                  style: ktSignUpSubtitleTextStyle.copyWith(height: null),
+                ),
+                Text(
+                  " terms of use",
+                  style: ktSignUpSubtitleTextStyle.copyWith(
+                      color: Colors.black,
+                      decoration: TextDecoration.underline,
+                      height: null),
+                )
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("and ", style: ktSignUpSubtitleTextStyle.copyWith(height: null),),
-                Text("Privacy Policy", style: ktSignUpSubtitleTextStyle.copyWith(color: Colors.black, decoration: TextDecoration.underline, height: null),)
+                Text(
+                  "and ",
+                  style: ktSignUpSubtitleTextStyle.copyWith(height: null),
+                ),
+                Text(
+                  "Privacy Policy",
+                  style: ktSignUpSubtitleTextStyle.copyWith(
+                      color: Colors.black,
+                      decoration: TextDecoration.underline,
+                      height: null),
+                )
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
@@ -91,9 +125,17 @@ class TextHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(ksSignUpTitle, style: ktSignUpTitleTextStyle,),
-        const SizedBox(height: 10,),
-        Text(ksSignUpSubtitle, style: ktSignUpSubtitleTextStyle,),
+        Text(
+          ksSignUpTitle,
+          style: ktSignUpTitleTextStyle,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          ksSignUpSubtitle,
+          style: ktSignUpSubtitleTextStyle,
+        ),
       ],
     );
   }
@@ -113,7 +155,9 @@ class SignUpFormBody extends StatelessWidget {
           borderRadius: 8,
           label: "Full Name",
         ),
-        const SizedBox(height: 30,),
+        const SizedBox(
+          height: 30,
+        ),
         TextFieldWidget(
           controller: TextEditingController(),
           textInputType: TextInputType.name,
@@ -121,7 +165,9 @@ class SignUpFormBody extends StatelessWidget {
           borderRadius: 8,
           label: "Email",
         ),
-        const SizedBox(height: 30,),
+        const SizedBox(
+          height: 30,
+        ),
         TextFieldWidget(
           controller: TextEditingController(),
           textInputType: TextInputType.name,
@@ -134,5 +180,3 @@ class SignUpFormBody extends StatelessWidget {
     );
   }
 }
-
-
