@@ -22,3 +22,7 @@ const String kaOnboardingImage_7 = "assets/images/onboarding/Image-7.png";
 const String kaOnboardingImage_8 = "assets/images/onboarding/Image-8.png";
 const String kaOnboardingPattern =
     "assets/images/onboarding/onboarding_pattern.png";
+
+const String kaCardMaskTop = "assets/images/card_mask_top.png";
+const String kaCardMaskBottom = "assets/images/card_mask_bottom.png";
+const String kaMasterCardIcon = "assets/images/master-card-icon.png";

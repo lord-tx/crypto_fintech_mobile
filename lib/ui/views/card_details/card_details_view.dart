@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:opticash_mobile/ui/common/app_assets.dart';
 import 'package:opticash_mobile/ui/common/app_colors.dart';
+import 'package:opticash_mobile/ui/common/ui_theming.dart';
 import 'package:opticash_mobile/ui/components/opti_app_bar.dart';
 import 'package:stacked/stacked.dart';
 
@@ -31,8 +33,11 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
           )
         ],
       ),
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        children: [
+          DebitCardContainer()
+        ],
       ),
     );
   }
@@ -43,3 +48,62 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
   ) =>
       CardDetailsViewModel();
 }
+
+class DebitCardContainer extends StatelessWidget {
+  const DebitCardContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(32),
+      child: Container(
+        height: 263,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(32),
+          color: const Color(0xFF525E1C),
+        ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: Image.asset(kaCardMaskTop),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Image.asset(kaCardMaskBottom),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("OptiCard", style: ktHomeHeaderTitleTextStyle.copyWith(color: Colors.white),),
+                      Text("Virtual Card", style: ktHomeHeaderSubtitleTextStyle.copyWith(color: Colors.white),),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(kaOptiLogo, width: 100, height: 100,),
+                      Image.asset(kaMasterCardIcon, width: 100, height: 100,),
+                    ],
+                  ),
+                  Text(".... .... .... 7430", style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "IBMPlexMono",
+                    fontSize: 30
+                  ),)
+                ],
+              ),
+            ),
+          ],
+        )
+      ),
+    );
+  }
+}
+

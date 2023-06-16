@@ -96,6 +96,15 @@ flutter:
        - asset: assets/rogerex-font/RogerexBold.ttf
          weight: 700
 
+   - family: IBMPlexMono
+     fonts:
+       - asset: assets/IBM_Plex_Mono/IBMPlexMono-Light.ttf
+         weight: 400
+       - asset: assets/IBM_Plex_Mono/IBMPlexMono-Regular.ttf
+         weight: 500
+       - asset: assets/IBM_Plex_Mono/IBMPlexMono-Bold.ttf
+         weight: 700
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
