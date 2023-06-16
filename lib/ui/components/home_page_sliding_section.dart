@@ -19,7 +19,6 @@ class HomePageSlidingSection extends StatelessWidget {
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.13,
-            width: MediaQuery.of(context).size.width * 0.7,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               // image: DecorationImage(
@@ -52,7 +51,6 @@ class HomePageSlidingSection extends StatelessWidget {
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.13,
-            width: MediaQuery.of(context).size.width * 0.7,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               // image: DecorationImage(
