@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:opticash_mobile/app/app.locator.dart';
 import 'package:opticash_mobile/app/app.router.dart';
@@ -16,7 +18,7 @@ class HomeViewModel extends BaseViewModel {
   PageController bottomPageController = PageController();
   final nav = locator<NavigationService>();
 
-  void onItemSelected(int pageIndex) {
+  Future onItemSelected(int pageIndex) async {
     debugPrint("Navigating to Page $pageIndex");
     switch (pageIndex) {
       case homeIndex:
@@ -28,7 +30,9 @@ class HomeViewModel extends BaseViewModel {
       case cardIndex:
         if (currentIndex != cardIndex) {
           currentIndex = cardIndex;
-          nav.navigateToCardDetailsView();
+          await nav.navigateToCardDetailsView();
+          currentIndex = homeIndex;
+          debugPrint("current Index: $currentIndex");
         }
         break;
       case transferIndex:

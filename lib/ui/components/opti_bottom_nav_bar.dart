@@ -3,7 +3,7 @@ import 'package:iconly/iconly.dart';
 import 'package:opticash_mobile/ui/common/app_assets.dart';
 
 class OptiBottomNavBar extends StatefulWidget {
-  final Function(int index)? onSelected;
+  final Future Function(int index)? onSelected;
   const OptiBottomNavBar({super.key, this.onSelected});
 
   @override
@@ -91,12 +91,15 @@ class _OptiBottomNavBarState extends State<OptiBottomNavBar> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
-                          onPressed: () {
+                          onPressed: () async {
                             setState(() {
                               currentlySelected = navBarItems["card"] ?? 0;
                             });
                             if (widget.onSelected != null) {
-                              widget.onSelected!(1);
+                              await widget.onSelected!(1);
+                              setState(() {
+                                currentlySelected = navBarItems["home"] ?? 0;
+                              });
                             }
                           },
                           icon: Icon(
