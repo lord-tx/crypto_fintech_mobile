@@ -7,6 +7,9 @@ const String kaHomeSliderGraphic_2 = "assets/images/slider_graphic_2.png";
 const String kaHomeSliderGraphicMask = "assets/images/slider_mask.png";
 const String kaDefaultAssetLink = "assets/images/slider_mask.png";
 const String kaAppleLogo = "assets/images/apple_logo.png";
+const String kaStarbucksLogo = "assets/images/starbucks_logo.png";
+const String kaDribbbleLogo = "assets/images/dribbble_logo.png";
+const String kaNetFlixLogo = "assets/images/netflix_logo.png";
 const String kaLinkedInLogo = "assets/images/linkedin_logo.png";
 const String kaDefaultHeaderImageAssetLink = "assets/images/header_avatar.png";
 

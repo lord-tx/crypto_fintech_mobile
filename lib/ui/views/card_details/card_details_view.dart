@@ -4,6 +4,7 @@ import 'package:opticash_mobile/ui/common/app_assets.dart';
 import 'package:opticash_mobile/ui/common/app_colors.dart';
 import 'package:opticash_mobile/ui/common/ui_theming.dart';
 import 'package:opticash_mobile/ui/components/opti_app_bar.dart';
+import 'package:opticash_mobile/ui/models/card_transaction_tile_model.dart';
 import 'package:stacked/stacked.dart';
 
 import 'card_details_viewmodel.dart';
@@ -36,7 +37,122 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
-          DebitCardContainer()
+          DebitCardContainer(),
+          SizedBox(height: 15,),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              color: Color(0xFFF8F8F8),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    const Icon(
+                      Icons.visibility_outlined,
+                      color: Colors.black,
+                      size: 45,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const Text("View Card")
+                  ],
+                ),
+                Column(
+                  children: [
+                    const Icon(
+                      IconlyBold.wallet,
+                      color: Colors.black,
+                      size: 45,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const Text("Top Up")
+                  ],
+                ),
+                Column(
+                  children: [
+                    const Icon(
+                      IconlyBold.editSquare,
+                      color: Colors.black,
+                      size: 45,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const Text("Withdraw")
+                  ],
+                ),
+                Column(
+                  children: [
+                    const Icon(
+                      Icons.settings,
+                      color: Colors.black,
+                      size: 45,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const Text("Settings")
+                  ],
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 15,),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0, 2),
+                  blurRadius: 2.0
+                )
+              ]
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("History", style: ktHomeTransactionTitleStyle,),
+                  TextButton(
+                    onPressed: (){},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.history, color: Colors.black,),
+                        Text("View", style: ktHomeTransactionButtonStyle,)
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 35,),
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index){
+              CardTransactionTileModel tnx = viewModel.transactions[index];
+              return ListTile(
+                leading: Image.asset(tnx.assetImage ?? kaDefaultAssetLink),
+                title: Text(tnx.transactionTitle ?? "", style: const TextStyle(fontWeight: FontWeight.bold),),
+                subtitle: Text("${tnx.date}   •   ${tnx.time}"),
+                trailing: Text(tnx.amount ?? "", style: const TextStyle(fontWeight: FontWeight.bold),),
+              );
+            },
+            separatorBuilder: (context, index){
+              return const Divider();
+            },
+            itemCount: viewModel.transactions.length
+          ),
         ],
       ),
     );
