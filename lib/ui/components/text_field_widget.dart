@@ -66,7 +66,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 5),
+        margin: const EdgeInsets.symmetric(),
         decoration: const BoxDecoration(
             // borderRadius: BorderRadius.circular(12),
             // boxShadow: [boxShadow],

@@ -35,7 +35,7 @@ class UnimplementedView extends StackedView<UnimplementedViewModel> {
               borderRadius: BorderRadius.circular(10),
               color: Colors.black12
             ),
-            child: Text(
+            child: const Text(
               "This page has not been implemented or is not within scope"
             ),
           ),

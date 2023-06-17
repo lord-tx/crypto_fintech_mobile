@@ -18,6 +18,9 @@ class OptiAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? subtitleText;
   final List<Widget> trailing;
   final OptiAppBarType type;
+  final String? backgroundImage;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
 
   const OptiAppBar(
       {super.key,
@@ -25,7 +28,7 @@ class OptiAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.titleText,
       this.subtitleText,
       this.trailing = const [],
-      this.type = OptiAppBarType.home});
+      this.type = OptiAppBarType.home, this.backgroundImage, this.backgroundColor, this.foregroundColor});
 
   @override
   Widget build(BuildContext context) {
@@ -68,29 +71,41 @@ class OptiAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       );
     } else if (type == OptiAppBarType.internal) {
-      return SafeArea(
-          child: ListTile(
-        onTap: () => locator<NavigationService>().back(),
-        leading: Container(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: const Color(0xFF9E9E9E), width: 3)),
-            child: const Icon(Icons.arrow_back_ios_new)),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-            titleText ?? "",
-            style: ktHomeHeaderTitleTextStyleAlt,
+      return Container(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        decoration: backgroundImage != null ? BoxDecoration(
+          color: backgroundColor != null ? backgroundColor! : Colors.transparent,
+          image: DecorationImage(
+            image: AssetImage(backgroundImage!),
+            fit: BoxFit.cover,
+          )
+        ) : BoxDecoration(
+            color: backgroundColor != null ? backgroundColor! : Colors.transparent,
+        ),
+        child: SafeArea(
+            child: ListTile(
+          onTap: () => locator<NavigationService>().back(),
+          leading: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: foregroundColor ?? const Color(0xFF9E9E9E), width: 3)),
+              child: Icon(Icons.arrow_back_ios_new, color: foregroundColor ?? const Color(0xFF9E9E9E),)),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+              titleText ?? "",
+              style: ktHomeHeaderTitleTextStyleAlt.copyWith(color: foregroundColor ?? const Color(0xFF9E9E9E)),
+            ),
+            ],
           ),
-          ],
-        ),
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: trailing,
-        ),
-      ));
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: trailing,
+          ),
+        )),
+      );
     } else {
       return const Placeholder();
     }

@@ -105,6 +105,11 @@ flutter:
        - asset: assets/IBM_Plex_Mono/IBMPlexMono-Bold.ttf
          weight: 700
 
+   - family: DM
+     fonts:
+       - asset: assets/DM/DMSans-Bold.ttf
+         weight: 700
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 

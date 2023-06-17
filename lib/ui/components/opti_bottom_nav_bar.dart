@@ -121,14 +121,7 @@ class _OptiBottomNavBarState extends State<OptiBottomNavBar> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
-                          onPressed: () {
-                            setState(() {
-                              currentlySelected = navBarItems["transfer"] ?? 0;
-                            });
-                            if (widget.onSelected != null) {
-                              widget.onSelected!(2);
-                            }
-                          },
+                          onPressed: () async {},
                           icon: const SizedBox.shrink()),
                       Text(
                         "Transfer",
@@ -206,12 +199,15 @@ class _OptiBottomNavBarState extends State<OptiBottomNavBar> {
                   color: const Color(0xFF2C3E02),
                 ),
                 child: IconButton(
-                    onPressed: () {
+                    onPressed: () async {
                       setState(() {
                         currentlySelected = navBarItems["transfer"] ?? 0;
                       });
                       if (widget.onSelected != null) {
-                        widget.onSelected!(2);
+                        await widget.onSelected!(2);
+                        setState(() {
+                          currentlySelected = navBarItems["home"] ?? 0;
+                        });
                       }
                     },
                     icon: Image.asset(

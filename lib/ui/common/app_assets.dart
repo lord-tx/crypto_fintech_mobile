@@ -1,4 +1,8 @@
 const String kaOptiLogo = "assets/images/opticash_logo.png";
+const String kaOptiCoin = "assets/images/opti_coin.png";
+const String kaSuccessTick = "assets/images/success_tick.png";
+const String kaAcceptIcon = "assets/images/accept_icon.png";
+const String kaNigeriaFlag = "assets/images/nigeria_flag.png";
 const String kaLoadingBackground = "assets/images/startup_background.png";
 const String kaHomeCardBackground = "assets/images/home_card_background.png";
 const String kaHomePageBackground = "assets/images/home_page_bg.png";
@@ -29,3 +33,15 @@ const String kaOnboardingPattern =
 const String kaCardMaskTop = "assets/images/card_mask_top.png";
 const String kaCardMaskBottom = "assets/images/card_mask_bottom.png";
 const String kaMasterCardIcon = "assets/images/master-card-icon.png";
+
+const String kaTransferHeaderImage = "assets/images/transfer_header_image.png";
+const String kaShareHeaderImage = "assets/images/share_header_image.png";
+const String kaReceiptFrame = "assets/images/receipt_frame.png";
+const String kaTransactionAvatar = "assets/images/transaction_avatar.png";
+
+const String kaSocialTwitter = "assets/images/bxl-twitter 1.png";
+const String kaSocialInstagram = "assets/images/bxl-instagram-alt 1.png";
+const String kaSocialFacebook = "assets/images/bxl-facebook-circle 1.png";
+
+/// Temporary Asset - Prefer to Design
+const String kaTConversionLine = "assets/images/conversion_line.png";

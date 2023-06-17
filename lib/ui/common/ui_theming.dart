@@ -1,5 +1,27 @@
 import 'package:flutter/material.dart';
 
+TextStyle ktTransactionAmountTitleTextStyle = const TextStyle(
+    color: Colors.black,
+    fontSize: 26,
+    fontWeight: FontWeight.w700,
+    fontFamily: "DM"
+);
+
+TextStyle ktTransactionHeaderTitleTextStyle = const TextStyle(
+    color: Colors.black,
+    fontSize: 22,
+    fontWeight: FontWeight.w700,
+    fontFamily: "Rogerex"
+);
+
+TextStyle ktTransactionHeaderSubtitleTextStyle = const TextStyle(
+    color: Color(0xFF8F92A1),
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Rogerex",
+    height: 1.4,
+);
+
 TextStyle ktHomeHeaderTitleTextStyle = const TextStyle(
     color: Colors.black,
     fontSize: 20,
@@ -94,6 +116,12 @@ TextStyle ktHomeTransactionButtonStyle = const TextStyle(
     color: Color(0xFF303030),
     fontSize: 16,
     fontWeight: FontWeight.w500,
+    fontFamily: "Rogerex");
+
+TextStyle ktTransactionTitleStyle = const TextStyle(
+    color: Color(0xFF0A0707),
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
     fontFamily: "Rogerex");
 
 TextStyle ktHomeTransactionListTitleStyle = const TextStyle(

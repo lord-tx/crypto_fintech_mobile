@@ -42,7 +42,7 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -102,7 +102,7 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
                 ),
                 Column(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.settings,
                       color: Colors.black,
                       size: 45,
@@ -120,7 +120,7 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
             height: 15,
           ),
           Container(
-            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            decoration: const BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
                   color: Colors.black12, offset: Offset(0, 2), blurRadius: 2.0)
             ]),
@@ -138,7 +138,7 @@ class CardDetailsView extends StackedView<CardDetailsViewModel> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.history,
                           color: Colors.black,
                         ),

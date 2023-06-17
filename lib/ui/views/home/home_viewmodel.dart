@@ -38,7 +38,9 @@ class HomeViewModel extends BaseViewModel {
       case transferIndex:
         if (currentIndex != transferIndex) {
           currentIndex = transferIndex;
-          nav.navigateToSendMoneyView();
+          await nav.navigateToSendMoneyView();
+          currentIndex = homeIndex;
+          debugPrint("current Index: $currentIndex");
         }
         break;
       case swapIndex:
