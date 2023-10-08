@@ -1,10 +1,10 @@
-# stacked_app
+# Fintech Mobile Application - Crypto
 
-Flutter app for Opticash Test
+Flutter app for Crypto Fintech Mobile Application - Opticash
 
 ## Getting Started
 
-This project was last build using:
+This project was last built using:
 
 flutter --version
  - Flutter 3.11.0-6.0.pre.134 • channel master • https://github.com/flutter/flutter.git
